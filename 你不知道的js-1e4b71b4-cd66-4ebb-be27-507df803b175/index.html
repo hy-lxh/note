@@ -1,0 +1,31 @@
+
+        <!DOCTYPE html>
+         <html lang="en">
+         <head>
+	     <meta charset="UTF-8">
+         <meta name="keywords" content="你不知道的js,博客,前端"/>
+         <meta name="description" content="你不知道的js书的阅读笔记"/>
+         <!--<meta http-equiv="content-security-policy" content="default-src self"/>-->
+	     <title>你不知道的js</title>
+        </head>
+        <link rel="stylesheet" href="../main.css">
+        <body>
+        <div class="message_box"></div>
+        <div class="content">
+           <div id="view">
+              <div>
+                <div class="bs_content">
+                   <h2 id='你不知道的js' class='XG132586'>你不知道的js</h2><h3 id='作用域' class='YG787449'>作用域</h3><span class='bold'> 何为作用域 </span><p class="detail"><span class="highlight">作用域</span>其实就是用来<span class="highlight">存储变量</span>,能够更方便来<span class="highlight">访问</span>和<span class="highlight">修改</span>变量的<span class="highlight">一套规则</span>，规定在何处以及如何查找变量</p><h4 id='编译原理' class='iI338916'>编译原理</h4><p class="detail">一段程序的源代码在执行之前一般都会经历三个阶段，分别是<span class="highlight">分词/词法分析阶段</span>、<span class="highlight">语法解析阶段</span>、<span class="highlight">代码生成阶段</span>,我们把这三个阶段统称为"编译"，但是javaScript引擎可能要复杂的多，在词法分析和代码生成阶段会有特定的步骤来对运行性能进行优化，包括对冗余元素进行优化，JavaScript的编译通常发生在代码执行的前几微秒</p><span class='bold'> 分词/词法分析 </span><p class="indent">1.<span class='bold'> 分词: </span> 将由字符组成的字符串拆分成有意义的代码块，这些代码块称之为词法单元，这个过程也称之为分词</p><p class="indent">2.<span class='bold'> 词法分析: </span>使用词法生成器判断当前词法单元是一个独立的词法单元还是其它词法单元的一部分，调用的是有状态的解析规则,这个过程就称之为词法分析</p><span class='bold'> 语法解析 </span><p class="indent">将分词获得的词法单元流解析成一个由元素逐级嵌套所组成的代表了程序语法结构的树,我们称之为抽奖语法树</p><span class='bold'> 代码生成 </span><p class="indent">将抽象语法树转换成可以执行的代码的过程称之为代码生成,这个过程离不开<span class="highlight">开发语言</span>和<span class="highlight">运行平台</span></p><h4 id='理解作用域' class='FC762412'>理解作用域</h4><p class="detail">引擎、编译器、作用域都参与到了编译的这个过程当中去，它们所负责的工作如下:</p><p class="detail"><span class='bold'> 引擎 </span>: 从头到尾负责JavaScript程序的编译和执行</p><p class="detail"><span class='bold'> 编译器 </span>: 负责语法分析和代码生成阶段的工作</p><p class="detail"><span class='bold'> 作用域 </span>: 负责收集和维护由所声明的标识符所组成的一系列查询，并实施一套严格的规则，确定当前执行程序对它们的访问权限</p><p class="detail"><span class='bold'> 整个执行过程 </span>:首先是编译器进行语法分析遇到了变量声明,它会问作用域当前作用域集合下是否存在该变量，如果有，那编译器会忽略声明，继续向下编译，如果没有，编译器会要求作用域在当前作用域集合下添加一个该变量，其次编译器会生成引擎运行所需的代码，当遇到变量赋值，引擎去作用域找该变量，如果找到了引擎就会使用该变量，否则会继续查找，如果找到了引擎就会将值赋值给变量，否则就抛出一个异常</p><h4 id='作用域嵌套' class='dD449421'>作用域嵌套</h4><p class="detail">当一个块或者函数嵌套在另一个块或者函数里面时就发生了作用域嵌套，所以，引擎在寻找变量时，首先会在当前作用域寻找，如果找不到会向上层作用域找，直到找到全局作用域上或者找到该变量为止</p><p class="detail">在未开启严格模式的情况下，如果在全局作用域下都未找到相应的变量，那么全局作用域会给你创建一个再给到引擎,但是如果开启严格模式，那么就会报一个ReferenceError的错误，表示作用域判别错误,而如果能够找到但是把它当成另一种类型的变量执行就会报一个TypeError，表示作用域是判别成功了，但是操作是不合理的</p>
+                </div>
+                <div class="rightDraw">
+                <div class="menu"><div class="directory">目录</div><ul class="menuCon"><li class="menu_li"><a href="#你不知道的js" id="XG132586">你不知道的js</a><ul class="menuCon_1"><li class="menu_li0"><a href="#作用域" id="YG787449">作用域</a><ul class="menuCon_2"><li class="menu_li0"><a href="#编译原理" id="iI338916">编译原理</a></li><li class="menu_li1"><a href="#理解作用域" id="FC762412">理解作用域</a></li><li class="menu_li2"><a href="#作用域嵌套" id="dD449421">作用域嵌套</a></li></ul></li></ul></li></ul></div>
+                </div>
+              </div>
+           </div>
+           <svg t="1648304059372" class="icon up" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3132" width="200" height="200"><path d="M832 64 192 64C121.6 64 64 121.6 64 192l0 640c0 70.4 57.6 128 128 128l640 0c70.4 0 128-57.6 128-128L960 192C960 121.6 902.4 64 832 64zM762.24 759.04c-12.8 12.8-33.28 12.8-45.44 0L513.92 560l-202.24 199.04c-12.8 12.8-33.28 12.8-45.44 0-12.8-12.8-12.8-32.64 0-45.44l224-220.16c6.4-6.4 15.36-9.6 24.32-8.96C522.88 483.84 531.2 487.04 538.24 493.44l224 220.16C775.04 726.4 775.04 746.24 762.24 759.04zM762.24 503.04c-12.8 12.8-33.28 12.8-45.44 0L513.92 304 311.68 503.04c-12.8 12.8-33.28 12.8-45.44 0-12.8-12.8-12.8-32.64 0-45.44l224-220.16c6.4-6.4 15.36-9.6 24.32-8.96C522.88 227.84 531.2 231.04 538.24 237.44l224 220.16C775.04 470.4 775.04 490.24 762.24 503.04z" p-id="3133" fill="#ffffff"></path></svg>
+        </div>
+        </body>
+           <script>let titles = [{"title":"你不知道的js","id":"你不知道的js","index":2,"class":"XG132586","children":[{"title":"作用域","id":"作用域","index":3,"class":"YG787449","children":[{"title":"编译原理","id":"编译原理","index":4,"class":"iI338916"},{"title":"理解作用域","id":"理解作用域","index":4,"class":"FC762412"},{"title":"作用域嵌套","id":"作用域嵌套","index":4,"class":"dD449421"}]}]}];</script>
+           <script src="../index.js" type="text/javascript"></script>
+           </html>
+            
